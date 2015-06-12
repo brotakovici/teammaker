@@ -25,10 +25,10 @@ class Maker
   def makePairs
     pairs = [] 
     
-    for i in 0..pairNo
+    for i in 0..@no
       pairs.push(makePair)
     end
 
-    return pair
+    return pairs
   end 
 end

@@ -28,5 +28,8 @@ io = IOHandler.new(input, output)
 names = io.readNames
 
 maker = Maker.new(names, size, pairs)
-pair = maker.makePair
-io.writeNames(pair[0], pair[1], pair[2])
+pairList = maker.makePairs
+
+pairList.each do |pair|
+  io.writeNames(pair[0], pair[1], pair[2])
+end

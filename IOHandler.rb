@@ -34,6 +34,10 @@ class IOHandler
     remainder.each do |nick|
       outfile.puts nick
     end
+
+    outfile.puts "\n End of pair"
+
+    outfile.puts "\n"
     outfile.close
   end
 end 
