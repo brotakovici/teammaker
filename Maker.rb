@@ -10,12 +10,12 @@ class Maker
   def makePair
     shuffledNames = @nameList.shuffle
     
-    if shuffledNames.length < teamSize * 2
-      raise TeamSizeError.new(teamSize, shuffledNames.size)
+    if shuffledNames.length < @size * 2
+      raise TeamSizeError.new(@size, shuffledNames.size)
     end 
   
-    teamOne = shuffledNames[0..teamSize - 1]
-    teamTwo = shuffledNames[teamSize..teamSize * 2 - 1]
+    teamOne = shuffledNames[0..@size - 1]
+    teamTwo = shuffledNames[@size..@size * 2 - 1]
     remainder = shuffledNames - teamOne - teamTwo
   
     pair = [teamOne, teamTwo, remainder]
