@@ -11,7 +11,7 @@ class Maker
     shuffledNames = @nameList.shuffle
     
     if shuffledNames.length < teamSize * 2
-      raise TeamSizeError, teamSize, shuffledNames.size
+      raise TeamSizeError.new(teamSize, shuffledNames.size)
     end 
   
     teamOne = shuffledNames[0..teamSize - 1]
@@ -23,10 +23,10 @@ class Maker
   end
 
   def makePairs
-    pairs = Array.new
-    index = 0
-    while index < pairNo
-      pairs[index] = makePair 
+    pairs = [] 
+    
+    for i in 0..pairNo
+      pairs.push(makePair)
     end
 
     return pair
