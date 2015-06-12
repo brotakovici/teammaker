@@ -1,23 +1,24 @@
 #!/usr/bin/env ruby
 
+require_relative "IOHandler.rb"
+
 puts "Enter name of the file containing the names of the team members."
 
 input = gets.chomp
 
-#puts "Enter how many team pairs to be made."
+puts "Enter the name of the output file."
 
-#pairs = gets.chomp
+output = gets.chomp
 
-#pairs = pairs.to_i
+puts "Enter how many team pairs to be made."
 
-file = File.open(input, "r")
+pairs = gets.chomp
 
-names = Array.new
+pairs = pairs.to_i
 
-while !file.eof?
-  name = file.readline
-  names.push(name)
-end
+io = IOHandler.new(input, output)
+
+names = io.readNames
 
 shuffledNames = names.shuffle
 
@@ -25,24 +26,4 @@ firstTeam = shuffledNames[0..4]
 secondTeam = shuffledNames[5..9]
 remainder = shuffledNames - firstTeam - secondTeam
 
-outFile = File.open("teams.txt", "w")
-
-outFile.puts "Team 1"
-
-firstTeam.each do |nick|
-  outFile.puts nick
-end
-
-outFile.puts "\nTeam 2"
-
-secondTeam.each do |nick|
-  outFile.puts nick
-end
-
-outFile.puts "\nNot in this match"
-remainder.each do |nick|
-  outFile.puts nick
-end
-
-file.close
-outFile.close
+io.writeNames(firstTeam, secondTeam, remainder)

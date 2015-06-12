@@ -7,7 +7,7 @@ class IOHandler
 
   def readNames
     names = Array.new
-    file = File.open(inputFile, "r")
+    file = File.open(@inputFile, "r")
     
     while !file.eof?
       names.push(file.readline)
@@ -18,7 +18,7 @@ class IOHandler
   end
 
   def writeNames(team1, team2, remainder)
-    outfile = File.open(outputFile, "w")
+    outfile = File.open(@outputFile, "w")
     
     outfile.puts "Team 1"
     team1.each do |nick|
