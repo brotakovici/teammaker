@@ -2,6 +2,7 @@
 
 require_relative "IOHandler.rb"
 require_relative "Maker.rb"
+require_relative "Player.rb"
 
 puts "Enter name of the file containing the names of the team members."
 
@@ -27,7 +28,15 @@ io = IOHandler.new(input, output)
 
 names = io.readNames
 
-maker = Maker.new(names, size, pairs)
+players = []
+
+names.each do |name|
+  player = Player.new(name, pairs - 1)
+  players.push(player)
+end
+
+maker = Maker.new(players, size, pairs)
+
 pairList = maker.makePairs
 
 pairList.each do |pair|
