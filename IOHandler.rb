@@ -18,9 +18,11 @@ class IOHandler
   end
 
   def writeNames(team1, team2, remainder)
-    outfile = File.open(@outputFile, "w")
+    outfile = File.open(@outputFile, "a")
     
-    outfile.puts "Team 1"
+    outfile.puts "Match:"
+    
+    outfile.puts "\nTeam 1"
     team1.each do |nick|
       outfile.puts nick
     end 
@@ -34,8 +36,6 @@ class IOHandler
     remainder.each do |nick|
       outfile.puts nick
     end
-
-    outfile.puts "\n End of pair"
 
     outfile.puts "\n"
     outfile.close
