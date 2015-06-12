@@ -27,10 +27,8 @@ io = IOHandler.new(input, output)
 
 names = io.readNames
 
-shuffledNames = names.shuffle
+maker = Maker.new(names, size, pairs)
 
-firstTeam = shuffledNames[0..4]
-secondTeam = shuffledNames[5..9]
-remainder = shuffledNames - firstTeam - secondTeam
+pair = maker.makePair
 
-io.writeNames(firstTeam, secondTeam, remainder)
+io.writeNames(pair[0], pair[1], pair[])
