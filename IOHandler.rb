@@ -24,17 +24,17 @@ class IOHandler
     
     outfile.puts "\nTeam 1"
     team1.each do |nick|
-      outfile.puts nick
+      outfile.puts nick.getName
     end 
 
     outfile.puts "\nTeam2"
     team2.each do |nick|
-      outfile.puts nick
+      outfile.puts nick.getName
     end
     
     outfile.puts "\nNot in this game"
     remainder.each do |nick|
-      outfile.puts nick
+      outfile.puts nick.getName
     end
 
     outfile.puts "\n"
