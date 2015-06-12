@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative "IOHandler.rb"
+require_relative "Maker.rb"
 
 puts "Enter name of the file containing the names of the team members."
 
@@ -15,6 +16,12 @@ puts "Enter how many team pairs to be made."
 pairs = gets.chomp
 
 pairs = pairs.to_i
+
+puts "Enter size of teams"
+
+size = gets.chomp
+
+size = size.to_i
 
 io = IOHandler.new(input, output)
 
