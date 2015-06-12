@@ -25,7 +25,7 @@ class Maker
   def makePairs
     pairs = [] 
     
-    for i in 0..@no
+    for i in 0...@no
       pairs.push(makePair)
     end
 
