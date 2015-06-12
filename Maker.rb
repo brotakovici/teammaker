@@ -10,7 +10,7 @@ class Maker
   end 
 
   def orderByPriority(array)
-    array.sort {|x, y| x.getPriority > y.getPriority}  
+    array.sort_by {|x| x.getPriority}.reverse  
   end
   
   def makePair
@@ -25,7 +25,7 @@ class Maker
     teamTwo = shuffledNames[@size..@size * 2 - 1]
     remainder = shuffledNames - teamOne - teamTwo
     (shuffledNames - remainder).map {|a| a.decreasePriority}
-
+    
     pair = [teamOne, teamTwo, remainder]
    return pair 
   end

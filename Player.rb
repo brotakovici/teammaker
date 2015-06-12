@@ -12,7 +12,7 @@ class Player
     @playerName
   end
 
-  def gerPriority
+  def getPriority
     @playerPriority
   end
 end
