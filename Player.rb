@@ -7,4 +7,12 @@ class Player
   def decreasePriority
     @playerPriority -= 1
   end
+
+  def getName
+    @playerName
+  end
+
+  def gerPriority
+    @playerPriority
+  end
 end
